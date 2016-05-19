@@ -3,8 +3,7 @@
 const fs = require('fs');
 const Hapi = require('hapi');
 const Ivona = require('ivona-node');
-const keys = require('./secret');
-const path = require('path')
+const path = require('path');
 
 var Readable = require('stream').Readable;
 
@@ -14,10 +13,23 @@ const server = new Hapi.Server();
 server.connection({
     port: port
 });
-console.log(keys);
+
+
+var accessKey;
+var secretKey;
+var productionMode = process.env.NODE_ENV === 'production';
+
+if (productionMode) {
+    accessKey = process.env.ACCESS_KEY;
+    secretKey = process.env.SECRET_KEY;
+} else {
+    accessKey = require('./secret').accessKey;
+    secretKey = require('./secret').secretKey;
+}
+
 var ivona = new Ivona({
-    accessKey: keys.accessKey,
-    secretKey: keys.secretKey
+    accessKey: accessKey,
+    secretKey: secretKey
 });
 
 // ivona.listVoices()
