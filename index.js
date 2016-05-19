@@ -27,6 +27,8 @@ if (productionMode) {
     secretKey = require('./secret').secretKey;
 }
 
+console.log(accessKey, secretKey)
+
 var ivona = new Ivona({
     accessKey: accessKey,
     secretKey: secretKey
