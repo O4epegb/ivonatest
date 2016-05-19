@@ -27,6 +27,6 @@ function loadSound(text) {
 
 $('button').click(function() {
     console.log('hello, we are testing hapi and ivona');
-    var text = $('textarea').val() || 'Привет! Меня зовут Максим.';
+    var text = $('textarea').val() || 'Привет! Меня зовут Степан.';
     loadSound(text)
 });
