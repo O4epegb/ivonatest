@@ -29,12 +29,4 @@ $('button').click(function() {
     console.log('hello, we are testing hapi and ivona');
     var text = $('textarea').val() || 'Привет! Меня зовут Максим.';
     loadSound(text)
-    // $.post("/test", {
-    //     name: "John",
-    //     time: "2pm"
-    // }).then(function(data) {
-    //     // $(".result").html(data);
-    //     console.log(data);
-    //     process(data)
-    // });
 });
